@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find a Housemate Survey</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome icons (free version)-->
+  <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+  <!-- Google fonts-->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&amp;display=swap"
+    rel="stylesheet" />
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="css/styles.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .form-group {
+        margin-bottom: 10px;
+    }  
+
+    .scrollable-form {
+    max-height: 400px; /* Adjust the height as needed */
+    overflow-y: auto;
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: rgba(69, 240, 146, 0.808) rgba(0, 0, 0, 0.1); /* For Firefox */
+    padding: 20px;
+  }
+
+  /* For Chrome, Edge, and Safari */
+  .scrollable-form::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .scrollable-form::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+  }
+
+  .scrollable-form::-webkit-scrollbar-track {
+    background-color: rgba(179, 3, 3, 0.548);
+    border-radius: 4px;
+  }    
+  /* .btn-group-vertical {
+    display: flex;
+    flex-direction: column;
+  }     */
+  </style>
+</head>
+
+<body>
+
+
+  <!-- Background Video-->
+  <video class="bg-video" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+    <source src="assets/mp4/bg.mp4" type="video/mp4" />
+  </video>
+  <!-- Masthead-->
+  <div class="masthead">
+    <div class="masthead-content text-white">
+      <div class="container-fluid px-4 px-lg-0">
+
+
+        <div class="container mt-10">
+          <h1>Tell us about yourself</h1>
+          <div class="row">
+            <!-- Left column for step buttons -->
+            <div class="col-md-5">
+              <div class="btn-group-vertical" role="group" aria-label="Step buttons">
+                <button class="btn btn-primary mb-3" onclick="showForm('form1')">Trvia</button>
+                <button class="btn btn-primary mb-3" onclick="showForm('form2')">Personality</button>
+                <button class="btn btn-primary" onclick="showForm('form3')" style="background-color: rgb(240, 0, 0);">Mandatory</button>
+              </div>
+            </div>
+            <!-- Right column for form container -->
+            <div class="col-md-7">
+              <div class="scrollable-form">
+                <div id="formContainer"></div>
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Submit</button>
+        </div>
+
+          <div class="row mt-4">
+            <div class="col">
+                <form id="form1" class="survey-form" style="display:none;" onsubmit="submitForm('form1'); return false;">
+                <h2>Trivia</h2>
+                <div class="form-group">
+                  <label for="question1">How do you prefer to spend your weekends?</label>
+                  <input type="text" class="form-control" id="question1" required>
+              </div>
+              <div class="form-group">
+                  <label for="question2">What's your favorite movie genre?</label>
+                  <input type="text" class="form-control" id="question2" required>
+              </div>
+              <div class="form-group">
+                  <label for="question3">Do you enjoy outdoor activities?</label>
+                  <input type="text" class="form-control" id="question3" required>
+              </div>
+              <div class="form-group">
+                  <label for="question4">What type of music do you listen to the most?</label>
+                  <input type="text" class="form-control" id="question4" required>
+              </div>
+              <div class="form-group">
+                  <label for="question5">Are you a morning person or a night owl?</label>
+                  <input type="text" class="form-control" id="question5" required>
+              </div>
+              <div class="form-group">
+                  <label for="question6">Do you enjoy cooking?</label>
+                  <input type="text" class="form-control" id="question6" required>
+              </div>
+              <div class="form-group">
+                  <label for="question7">What's your favorite type of cuisine?</label>
+                  <input type="text" class="form-control" id="question7" required>
+              </div>
+              <div class="form-group">
+                  <label for="question8">Are you a pet lover?</label>
+                  <input type="text" class="form-control" id="question8" required>
+              </div>
+              <div class="form-group">
+                  <label for="question9">How do you like to stay fit?</label>
+                  <input type="text" class="form-control" id="question9" required>
+              </div>
+              <div class="form-group">
+                  <label for="question10">What's your favorite hobby?</label>
+                  <input type="text" class="form-control" id="question10" required>
+              </div>                
+              </form>
+
+              <form id="form2" class="survey-form" style="display:none;" onsubmit="submitForm('form2'); return false;">
+                <h2>Personality</h2>
+                  <div class="form-group">
+                      <label for="question11">Are you introverted or extroverted?</label>
+                      <input type="text" class="form-control" id="question11" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="question12">How do you handle conflicts or disagreements?</label>
+                      <input type="text" class="form-control" id="question12" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="question13">What motivates you to achieve your goals?</label>
+                      <input type="text" class="form-control" id="question13" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="question14">Are you organized or spontaneous?</label>
+                      <input type="text" class="form-control" id="question14" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="question15">How do you deal with stress?</label>
+                      <input type="text" class="form-control" id="question15" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="question16">Are you a risk-taker or do you prefer to play it safe?</label>
+                      <input type="text" class="form-control" id="question16" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="question17">What are your communication preferences?</label>
+                      <input type="text" class="form-control" id="question17" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="question18">How do you approach teamwork or collaboration?</label>
+                      <input type="text" class="form-control" id="question18" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="question19">Are you more analytical or creative?</label>
+                      <input type="text" class="form-control" id="question19" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="question20">What values are most important to you?</label>
+                      <input type="text" class="form-control" id="question20" required>
+                  </div>
+              </form>
+
+              <form id="form3" class="survey-form" style="display:none;" onsubmit="submitForm('form3'); return false;">
+                <h2>Mandatory</h2>
+                  <div class="form-group">
+                      <label for="question21">What is your monthly budget for rent and utilities?</label>
+                      <input type="text" class="form-control" id="question21" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="question22">How often do you clean common areas in your living space?</label>
+                      <input type="text" class="form-control" id="question22" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="question23">Are you comfortable with overnight guests?</label>
+                      <input type="text" class="form-control" id="question23" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="question24">Do you have any dietary restrictions or food allergies?</label>
+                      <input type="text" class="form-control" id="question24" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="question25">What is your preferred level of noise in the living environment?</label>
+                      <input type="text" class="form-control" id="question25" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="question26">How do you feel about sharing household chores?</label>
+                      <input type="text" class="form-control" id="question26" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="question27">Are you a smoker or do you have any smoking restrictions?</label>
+                      <input type="text" class="form-control" id="question27" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="question28">What are your expectations regarding privacy?</label>
+                      <input type="text" class="form-control" id="question28" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="question29">How do you prefer to handle shared expenses (e.g., groceries, cleaning supplies)?</label>
+                      <input type="text" class="form-control" id="question29" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="question30">Do you have any specific preferences or requirements for a potential housemate?</label>
+                      <input type="text" class="form-control" id="question30" required>
+                  </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showForm(formId) {
+      // Hide all survey forms
+      document.querySelectorAll('.survey-form').forEach(form => {
+        form.style.display = 'none';
+      });
+
+      // Show the selected form
+      form = document.getElementById(formId);
+      document.getElementById("formContainer").appendChild(form);
+      form.style.display = 'block';
+    }
+
+    function submitForm(formId) {
+      const formData = new FormData(document.getElementById(formId));
+      let answers = {};
+      for (const [key, value] of formData.entries()) {
+        answers[key] = value;
+      }
+      console.log('Form submitted:', answers);
+      // You can do further processing or send the data to a server here
+    }
+
+  </script>
+
+</body>
+
+</html>
