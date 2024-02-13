@@ -243,22 +243,35 @@
     }
 
     function submitForm(formId) {
-      const formData = new FormData(document.getElementById(formId));
+      const formData = document.forms["form1"];
+      const formData2 = document.forms["form2"];
+      const formData3 = document.forms["form3"];
       let answers = {};
-      for (const [key, value] of formData.entries()) {
-        answers[key] = value;
+      var elements = formData3.elements;
+
+      for (var i = 0; i < elements.length; i++) {
+          var element = elements[i];
+          if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+              if (element.value === "") {
+                  alert("Please fill out all required fields");
+                  return false;
+              }
+          }
       }
       console.log('Form submitted:', answers);
+      return true;
       // You can do further processing or send the data to a server here
     }
 
     function submitAndRedirect(destination) {
       // Call the submitForm function for the active form
       const activeFormId = document.querySelector('.survey-form[style="display: block;"]').id;
-      submitForm(activeFormId);
+      const validation = submitForm(activeFormId);
 
       // Redirect to the specified destination
-      window.location.href = destination;
+      if (validation) {
+        window.location.href = destination;
+      }
     }
 
   </script>
