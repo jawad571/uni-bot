@@ -74,7 +74,7 @@
             <!-- Left column for step buttons -->
             <div class="col-md-5">
               <div class="btn-group-vertical" role="group" aria-label="Step buttons">
-                <button class="btn btn-primary mb-3" onclick="showForm('form1')">Trvia</button>
+                <button class="btn btn-primary mb-3" onclick="showForm('form1')">Trivia</button>
                 <button class="btn btn-primary mb-3" onclick="showForm('form2')">Personality</button>
                 <button class="btn btn-primary" onclick="showForm('form3')" style="background-color: rgb(240, 0, 0);">Mandatory</button>
               </div>
@@ -86,7 +86,7 @@
               </div>
             </div>
           </div>
-          <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Submit</button>
+          <button type="submit" class="btn btn-primary" onclick="submitAndRedirect('dreamflatmate.html')" style="margin-top: 40px;">Submit</button>
         </div>
 
           <div class="row mt-4">
@@ -250,6 +250,15 @@
       }
       console.log('Form submitted:', answers);
       // You can do further processing or send the data to a server here
+    }
+
+    function submitAndRedirect(destination) {
+      // Call the submitForm function for the active form
+      const activeFormId = document.querySelector('.survey-form[style="display: block;"]').id;
+      submitForm(activeFormId);
+
+      // Redirect to the specified destination
+      window.location.href = destination;
     }
 
   </script>
